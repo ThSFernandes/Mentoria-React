@@ -1,0 +1,63 @@
+.header-logo-container {
+  display: flex;
+  gap: 18px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .cart-area {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+  }
+
+  .text-are {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-meu-carrinho {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    margin: 0;
+  }
+
+  .text-quant-carrinho {
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: white;
+    opacity: 60%;
+    margin-left: auto;
+    margin-top: 2px;
+  }
+
+  .shopping-cart {
+    display: flex;
+    align-items: center;
+  }
+}
+
+// .header-logo-container {
+// display: flex;
+// 3 formas de ajsutar alguns detalhes.
+// gap: 18px;
+
+// img + img{  //pegar o irmão de um elemento ele pega somente a segunda imagem
+//   margin-left: 18px;
+// }
+// .teste {
+// margin-left: 18px;
+// }
+// }
+//Quando preciso acessa um atributo que não da para acessar
+// [alt=rocketshoes]{
+//   border-radius: 10px;
+//   border: 2px solid red;
+// }
+
+// [class=header]{
+//   background-color: blue;
+// }
