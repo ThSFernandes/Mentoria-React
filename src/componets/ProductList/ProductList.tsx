@@ -8,19 +8,19 @@ const requestProducts = fetch(`http://localhost:3000/cards`).then((response) =>
 );
 
 export function ProductList(): React.ReactElement {
-
-    const products = use<Product[]>(requestProducts);
+  const products = use<Product[]>(requestProducts);
 
   return (
     <div className="cards-flex">
       {products.map((product) => {
         return (
           <Card
+            id={product.id}
             key={product.id}
             urlImage={product.image}
             preco={formatPrice(product.price)}
             descricao={product.title}
-            quantidade={1}
+            quantidade={0}
           />
         );
       })}

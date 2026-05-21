@@ -1,4 +1,3 @@
-@use "../../sytles/colors.scss" as *;
 
 .container-card {
   display: flex;
@@ -18,7 +17,6 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 
-
   }
 
   .preco-tenis{
@@ -26,41 +24,5 @@
     font-size: 21px;
     margin-top: 10px;
     
-  }
-
-  .botao {
-    display: flex;
-    border-radius: 4px;
-    margin-top: 20px;
-    background-color: $button-color_1;
-    align-items: center;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-
-    .contador-produto {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 55px;
-      font-weight: 400;
-      background-color: rgba(0, 0, 0, 20%);
-
-      .img-carrinho {
-        width: 16px;
-        height: 42px;
-      }
-
-      .quantidade {
-        font-size: 14px;
-      }
-    }
-
-    .texto-adicionar {
-      flex: 1; //ocupar toda largura que ele puder
-      padding: 10px;
-      text-align: center;
-    }
   }
 }

@@ -1,16 +1,18 @@
+import { Suspense } from "react";
 import { Header } from "../../componets/Header/Header";
 import { ProductList } from "../../componets/ProductList/ProductList";
+import { Spiner } from "../../componets/spiner/Spiner";
 
 export function Home(): React.ReactElement {
-
-    // useContext(contexto)  context Api
-    return (
+  return (
     <>
       <section className="main-container">
         <Header />
       </section>
       <section className="main-container area-cards">
-        <ProductList />
+        <Suspense fallback={<Spiner color="#7e1cec" size={100} />}>
+          <ProductList />
+        </Suspense>
       </section>
     </>
   );

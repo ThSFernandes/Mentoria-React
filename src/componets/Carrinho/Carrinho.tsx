@@ -1,16 +1,25 @@
-import shoppingCart from "../../assets/images/ShoppingCart.svg";
+import { useContext } from "react";
+import type { Product } from "../../types/Produto";
+import { Icone } from "../Icone/Icone";
+import "./carrinho.scss";
+import { CartContext } from "../../context/CartContext";
 
-// criar um componente de icone ToDo
+interface CarrinhoProps {
+  produto?: Product[],
+}
 
-export function Carrinho(): React.ReactElement {
+export function Carrinho({produto = []}: CarrinhoProps ): React.ReactElement {
+
+  const {contador} = useContext(CartContext);
+
   return (
-    <div className="cart-area">
-      <div className="text-are">
+    <div className="carrinho-area">
+      <div className="text-area">
         <p className="text-meu-carrinho">Meu carrinho</p>
-        <p className="text-quant-carrinho">3 itens</p>
+        <p className="text-quant-carrinho">{contador} itens</p>
       </div>
-      <div className="shopping-cart">
-        <img src={shoppingCart} alt="Carrinho de compras" />
+      <div className="shopping-card">
+        <Icone name={"shoppingCart"} />
       </div>
     </div>
   );
