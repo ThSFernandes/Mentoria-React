@@ -15,12 +15,8 @@ export function ProductList(): React.ReactElement {
       {products.map((product) => {
         return (
           <Card
-            id={product.id}
             key={product.id}
-            urlImage={product.image}
-            preco={formatPrice(product.price)}
-            descricao={product.title}
-            quantidade={0}
+            produto={product}
           />
         );
       })}

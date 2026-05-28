@@ -5,4 +5,5 @@ export interface Product {
     price: number,
     special: boolean,
     image: string
+    count: number
 }

@@ -19,6 +19,6 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
-    rules: { "@typescript-eslint/explicit-function-return-type": "error" },
+    rules: { "@typescript-eslint/explicit-function-return-type": "error", "react-refresh/only-export-components": "off" },
   },
 ]);
