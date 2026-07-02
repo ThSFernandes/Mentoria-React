@@ -1,0 +1,41 @@
+@use "../../../sytles/colors.scss" as *;
+
+.rodape-carrinho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 8px;
+
+  .btn-finalizar {
+    border: none;
+    border-radius: 4px;
+    background-color: $button-color_1;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 14px 24px;
+    text-transform: uppercase;
+  }
+
+  .total-pedido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+
+    .texto-total {
+      font-size: 12px;
+      font-weight: 700;
+      color: #999;
+      text-transform: uppercase;
+    }
+
+    .valor-total {
+      font-size: 28px;
+      font-weight: 700;
+      color: #333;
+    }
+  }
+}

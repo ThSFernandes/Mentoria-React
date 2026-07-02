@@ -1,17 +1,18 @@
-import { useContext } from "react";
 import { Icone } from "../Icone/Icone";
 import "./carrinho.scss";
-import { CartContext } from "../../context/CartContext";
 
-export function Carrinho(): React.ReactElement {
+interface CarrinhoProps {
+  /** TODO: remover quando o resumo do carrinho vier só do CartContext */
+  totalItens?: number;
+}
 
-  const {listaProdutos} = useContext(CartContext);
+export function Carrinho({ totalItens }: CarrinhoProps): React.ReactElement {
 
   return (
     <div className="carrinho-area">
       <div className="text-area">
         <p className="text-meu-carrinho">Meu carrinho</p>
-        <p className="text-quant-carrinho">{listaProdutos.length} itens</p>
+        <p className="text-quant-carrinho">{totalItens} itens</p>
       </div>
       <div className="shopping-card">
         <Icone name={"shoppingCart"} />

@@ -1,6 +1,5 @@
 import { use } from "react";
 import { Card } from "../Cards/Card";
-import { formatPrice } from "../utils/formatPrice/formatPrice";
 import type { Product } from "../../types/Produto";
 
 const requestProducts = fetch(`http://localhost:3000/cards`).then((response) =>

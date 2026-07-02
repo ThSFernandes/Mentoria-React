@@ -1,0 +1,27 @@
+.tabela-carrinho {
+  width: 100%;
+  border-collapse: collapse;
+
+  .linha-cabecalho {
+    border-bottom: 1px solid #eee;
+  }
+
+  .coluna-cabecalho {
+    padding-bottom: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .coluna-qtd {
+    text-align: right;
+    width: 140px;
+  }
+
+  .coluna-preco {
+    text-align: right;
+    width: 120px;
+  }
+}

@@ -1,0 +1,33 @@
+@use "../../../sytles/colors.scss" as *;
+
+.seletor-quantidade {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+
+  .btn-quantidade {
+    width: 28px;
+    height: 28px;
+    border-radius: 10%;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: $button-color_1;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .input-quantidade {
+    width: 46px;
+    height: 32px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+  }
+}

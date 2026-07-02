@@ -2,8 +2,12 @@ import "./header.scss";
 import textoLogo from "../../assets/images/ROCKETSHOES.svg";
 import shape from "../../assets/images/Shape.svg";
 import { Carrinho } from "../Carrinho/Carrinho";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 export function Header(): React.ReactElement {
+  const {listaProdutos} = useContext(CartContext);
+
 
   return (
     <div className="header">
@@ -12,7 +16,7 @@ export function Header(): React.ReactElement {
           <img src={textoLogo} alt="rocketshoes" />
           <img src={shape} alt="Tênis" />
         </div>
-        <Carrinho />
+        <Carrinho totalItens={listaProdutos.length} />
       </div>
     </div>
   );
