@@ -1,6 +1,5 @@
 import type { Product } from "../../types/Produto";
 
-/** TODO: remover mock quando conectar ao CartContext e fluxo real do carrinho */
 export const PRODUTOS_CARRINHO_VISUAL: Product[] = [
   {
     id: 1,

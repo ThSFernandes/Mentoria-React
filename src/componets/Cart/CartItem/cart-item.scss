@@ -1,15 +1,19 @@
 .item-carrinho {
+  display: flex;
+  align-items: center;
   border-bottom: 1px solid #eee;
+  padding: 20px 0;
 
-  td {
-    padding: 20px 0;
-    vertical-align: middle;
+  .label-mobile {
+    display: none;
   }
 
   .celula-produto {
+    flex: 1;
     display: flex;
     align-items: center;
     gap: 16px;
+    min-width: 0;
   }
 
   .imagem-tenis {
@@ -40,14 +44,44 @@
   }
 
   .celula-quantidade {
-    text-align: right;
+    width: 140px;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .subtotal-item {
-    text-align: right;
+    width: 120px;
+    display: flex;
+    justify-content: flex-end;
     font-size: 16px;
     font-weight: 700;
     color: #333;
+  }
+
+  .valor-subtotal {
     white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .item-carrinho {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+
+    .label-mobile {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #999;
+      text-transform: uppercase;
+    }
+
+    .celula-quantidade,
+    .subtotal-item {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }

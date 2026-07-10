@@ -2,7 +2,6 @@ import { Icone } from "../Icone/Icone";
 import "./carrinho.scss";
 
 interface CarrinhoProps {
-  /** TODO: remover quando o resumo do carrinho vier só do CartContext */
   totalItens?: number;
 }
 

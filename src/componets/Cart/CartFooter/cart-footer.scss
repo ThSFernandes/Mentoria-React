@@ -17,6 +17,11 @@
     letter-spacing: 0.5px;
     padding: 14px 24px;
     text-transform: uppercase;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
 
   .total-pedido {

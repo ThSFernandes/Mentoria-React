@@ -36,5 +36,3 @@ export const useProduct = (produto: Product): UseProductProps => {
     indexProduto,
   };
 };
-
-//   export const {adicionarProdutoCarrinho} = useProduct();

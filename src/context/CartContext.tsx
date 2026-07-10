@@ -18,13 +18,9 @@ export function CartProvider({ children }: CartProviderProps): React.ReactNode {
     initialValueProductList,
   );
 
-  // JSON.stringify
   useEffect(() => {
     console.log("contexto", listaProdutos);
-    localStorage.setItem(
-      "MonitoriaReact@Carrinho",
-      JSON.stringify(listaProdutos),
-    );
+    localStorage.setItem(CARTKEY, JSON.stringify(listaProdutos));
   }, [listaProdutos]);
 
   return (
@@ -33,7 +29,6 @@ export function CartProvider({ children }: CartProviderProps): React.ReactNode {
     </CartContext.Provider>
   );
 
-  //hosting funciona para function
   function initialValueProductList(): Product[] {
     const produtosSalvos = localStorage.getItem(CARTKEY);
     if (!produtosSalvos) {

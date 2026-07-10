@@ -1,11 +1,9 @@
 export function CartTableHeader(): React.ReactElement {
   return (
-    <thead>
-      <tr className="linha-cabecalho">
-        <th className="coluna-cabecalho">PRODUTO</th>
-        <th className="coluna-cabecalho coluna-qtd">QTD</th>
-        <th className="coluna-cabecalho coluna-preco">PREÇO</th>
-      </tr>
-    </thead>
+    <div className="cabecalho-carrinho">
+      <span className="coluna-cabecalho coluna-produto">PRODUTO</span>
+      <span className="coluna-cabecalho coluna-qtd">QTD</span>
+      <span className="coluna-cabecalho coluna-preco">PREÇO</span>
+    </div>
   );
 }

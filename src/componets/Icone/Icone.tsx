@@ -2,8 +2,7 @@ import shoppingCart from "../../assets/images/ShoppingCart.svg";
 
 const icons = { shoppingCart };
 
-//  | posso usar o pipe para quando tiver mais de um 
-type nameIcon =  "shoppingCart";
+type nameIcon = "shoppingCart";
 
 interface IconeProps {
   name: nameIcon;

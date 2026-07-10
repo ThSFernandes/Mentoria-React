@@ -1,7 +1,6 @@
 .main-container {
-  /* border: 2px solid #fff; */
   max-width: 940px;
-  margin: 0 auto; /*deixar as bordas sem flex*/
+  margin: 0 auto;
   font-family: "Roboto", sans-serif;
 }
 
@@ -22,7 +21,3 @@
   grid-template-rows: repeat(2, auto);
   gap: 20px 18px;
 }
-
-// #root{  declarar variável no css
-//   background-color: red;
-// }

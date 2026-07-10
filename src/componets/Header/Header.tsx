@@ -9,6 +9,11 @@ import { Link } from "@tanstack/react-router";
 export function Header(): React.ReactElement {
   const { listaProdutos } = useContext(CartContext);
 
+  const totalItens = listaProdutos.reduce(
+    (acc, product) => acc + product.count,
+    0,
+  );
+
   return (
     <div className="header">
       <div className="header-logo-container">
@@ -20,7 +25,7 @@ export function Header(): React.ReactElement {
         </Link>
 
         <Link to="/cart">
-          <Carrinho totalItens={listaProdutos.length} />
+          <Carrinho totalItens={totalItens} />
         </Link>
       </div>
     </div>
