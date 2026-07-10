@@ -5,16 +5,15 @@
   font-family: "Roboto", sans-serif;
 }
 
-.area-cards{
-    display: flex;
-
-.cards-flex {
+.area-cards {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px 18px;
-  align-items: center;
- ;
-}
+
+  .cards-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 18px;
+    align-items: center;
+  }
 }
 
 .cards-grid {

@@ -1,21 +1,15 @@
 import "./sytles/reset.css";
 import "./sytles/global.scss";
-import { CartProvider } from "./context/CartContext";
-import { Home } from "./pages/Home/Home";
-import { Cart } from "./pages/Cart/Cart";
-import { router } from "./router/__router";
+import { router } from "./router/routerConfig";
 import { RouterProvider } from "@tanstack/react-router";
-
+import { CartProvider } from "./context/CartContext";
 
 function App(): React.ReactElement {
   return (
-    <RouterProvider router={router}/>
-
-    // <CartProvider>
-    //   <Cart />
-    // </CartProvider>
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   );
 }
 
 export default App;
-

@@ -19,11 +19,7 @@ export function CartItem({
   return (
     <tr className="item-carrinho">
       <td className="celula-produto">
-        <img
-          className="imagem-tenis"
-          src={product.image}
-          alt={product.title}
-        />
+        <img className="imagem-tenis" src={product.image} alt={product.title} />
         <div className="informacoes-tenis">
           <p className="descricao-tenis">{product.title}</p>
           <p className="preco-tenis">{formatPrice(product.price)}</p>
