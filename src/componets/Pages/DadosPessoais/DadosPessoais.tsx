@@ -1,51 +1,63 @@
-import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import "./dados-pessoais.scss";
+
+interface FormFields {
+  nome: string;
+  telefone: number;
+  cep: string;
+  estado: string;
+  cidade: string;
+}
 
 // deixar o card genérico para qualquer parte
 export function DadosPessoais(): React.ReactElement {
-  const [nome, setNome] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormFields>({
+    defaultValues: { nome: "Leandro" },
+  });
 
-  useEffect(() => {
-    console.log("nome alterado");
-  }, [nome, setNome]);
+  console.log("formState", errors);
+  const enviarFormulario = handleSubmit((data): void => {
+    console.log("data", data);
+  });
 
   return (
     <div className="dados-pessoais-container">
       <div className="container-formulario">
         <h1 className="title-formulario"> Formulário</h1>
 
-        <form className="formulario">
-          {/* input controlado quando quero validar as informações*/}
+        {/* //Opções de deixar um campo para ele enviar como array */}
+        <form className="formulario" onSubmit={enviarFormulario}>
           <input
             className="campo-formulario"
             type="text"
-            name="nome"
-            placeholder="nome"
-            onBlur={(event) => {
-              console.log("value", event.target.value);
-              const campoNome = event.target.value;
-              setNome(campoNome);
-            }}
+            placeholder="nome completo"
+            {...register("nome", { required: true })}
           />
-          <p>{nome}</p>
+
           <input
             className="campo-formulario"
             type="number"
-            name="telefone"
             placeholder="telefone"
+            {...register("telefone")}
           />
           <input
             className="campo-formulario"
             type="text"
-            name="cep"
             id=""
             placeholder="CEP"
+            {...register("cep")}
           />
-          <select className="campo-formulario" name="estado" id="">
+          <select className="campo-formulario" id="" {...register("estado")}>
+            <option value={""}>Selecione</option>
             <option>Estado</option>
           </select>
 
-          <select className="campo-formulario" name="cidade" id="">
+          <select className="campo-formulario" id="" {...register("cidade")}>
+            <option value={""}>Selecione</option>
             <option>Cidade</option>
           </select>
           <button className="btn-submit" type="submit">
