@@ -1,25 +1,27 @@
 import { useForm } from "react-hook-form";
 import "./dados-pessoais.scss";
+import { zodResolver } from "@hookform/resolvers/zod";
+import z from "zod";
+import Input from "../../Input/input";
 
-interface FormFields {
-  nome: string;
-  telefone: number;
-  cep: string;
-  estado: string;
-  cidade: string;
-}
+const FEATURE_TOGGLE = false;
+
+const schema = z.object({
+  nome: z.string(),
+  telefone: z.array(z.number()),
+  cep: z.string(),
+  estado: z.string().optional(),
+  cidade: z.string().optional(),
+});
+
+type FormFields = z.infer<typeof schema>;
 
 // deixar o card genérico para qualquer parte
 export function DadosPessoais(): React.ReactElement {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormFields>({
-    defaultValues: { nome: "Leandro" },
+  const { register, handleSubmit } = useForm<FormFields>({
+    resolver: zodResolver(schema),
   });
 
-  console.log("formState", errors);
   const enviarFormulario = handleSubmit((data): void => {
     console.log("data", data);
   });
@@ -31,10 +33,9 @@ export function DadosPessoais(): React.ReactElement {
 
         {/* //Opções de deixar um campo para ele enviar como array */}
         <form className="formulario" onSubmit={enviarFormulario}>
-          <input
-            className="campo-formulario"
-            type="text"
-            placeholder="nome completo"
+          <Input
+            // loading
+            label="Nome"
             {...register("nome", { required: true })}
           />
 
@@ -42,8 +43,22 @@ export function DadosPessoais(): React.ReactElement {
             className="campo-formulario"
             type="number"
             placeholder="telefone"
-            {...register("telefone")}
+            {...register("telefone", { valueAsNumber: true })}
           />
+          {/* mapear os arrays
+          <input
+            className="campo-formulario"
+            type="number"
+            placeholder="telefone"
+            {...register("telefone.casa.2", { valueAsNumber: true })}
+          />
+          <input
+            className="campo-formulario"
+            type="number"
+            placeholder="telefone"
+            {...register("telefone.casa.3", { valueAsNumber: true })}
+          /> */}
+
           <input
             className="campo-formulario"
             type="text"
@@ -51,15 +66,27 @@ export function DadosPessoais(): React.ReactElement {
             placeholder="CEP"
             {...register("cep")}
           />
-          <select className="campo-formulario" id="" {...register("estado")}>
-            <option value={""}>Selecione</option>
-            <option>Estado</option>
-          </select>
+          {FEATURE_TOGGLE && (
+            <>
+              <select
+                className="campo-formulario"
+                id=""
+                {...register("estado")}
+              >
+                <option value={""}>Selecione</option>
+                <option>Estado</option>
+              </select>
 
-          <select className="campo-formulario" id="" {...register("cidade")}>
-            <option value={""}>Selecione</option>
-            <option>Cidade</option>
-          </select>
+              <select
+                className="campo-formulario"
+                id=""
+                {...register("cidade")}
+              >
+                <option value={""}>Selecione</option>
+                <option>Cidade</option>
+              </select>
+            </>
+          )}
           <button className="btn-submit" type="submit">
             Enviar
           </button>

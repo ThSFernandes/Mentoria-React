@@ -6,7 +6,6 @@ interface CarrinhoProps {
 }
 
 export function Carrinho({ totalItens }: CarrinhoProps): React.ReactElement {
-
   return (
     <div className="carrinho-area">
       <div className="text-area">

@@ -1,0 +1,20 @@
+.label-field {
+  display: block;
+  flex-direction: column;
+
+  .campo-formulario {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .spiner-input {
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .label-input {
+    display: inline-block;
+  }
+}
